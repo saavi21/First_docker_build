@@ -1,11 +1,15 @@
-1) git clone https://github.com/saavi21/First_docker_build.git
-2) cd First_docker_build; Go to 
-3) sudo docker build -t first_docker_build.  [It builds the image based on Dockerfile and 1.html files...docker build -t REPOSITORY_NAME:TAG . ]
-4) sudo docker images  [Check images ]
-5) sudo docker run -it -p 84:80 -d first_docker_build 
-6) sudo docker ps
-7) Hit the URL with hostname:port.. like http://192.167.56.103:84
-8) http://192.168.56.103:84/1.html
-9) sudo docker exec -it 688b97f36425 bash
-10) check 1.html, Dockerfile files are present inside the container at /var/www/html
-11) Also, #echo $name    //to check the variable output
+git clone https://github.com/saavi21/First_docker_build.git
+cd First_docker_build/ 
+docker build -t first_docker_build .  [It builds the image based on Dockerfile and 1.html files...docker build -t REPOSITORY_NAME:TAG . ]
+docker images  [Check images ]
+docker run -it -p 84:80 -d first_docker_build 
+docker ps
+curl localhost:84 
+OR 
+Hit the URL with localhost:port.. like http://192.167.56.103:84
+curl localhost:84/1.html
+OR
+http://192.168.56.103:84/1.html
+docker exec -it 688b97f36425 bash
+check 1.html, Dockerfile files are present inside the container at /var/www/html
+Also, #echo $name    //to check the variable output
